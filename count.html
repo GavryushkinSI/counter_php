@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="jquery.min.js"></script>
+	
+    <button type="button" onclick="foo()">Click Me</button> 
+	<p id="count">25</p>	
+    
+  <script>  
+ $(document).ready(function(){
+$.get( "test.php", function( data ) {
+  $( "#count" ).html(data);
+});
+ }());
+ function foo(){
+  var count=parseInt($('#count').text())+1;
+  $('#count').html(count);
+    						$.ajax({ 
+							url:"test.php", 
+							type: "POST", 
+							data: {count},
+							success:function(data){ 
+							console.log(data); 
+							} 
+							}); 
+							};
+							
+					
+							
+  </script>
+  
+
+
+</body>
+</html>
+
+
+				
